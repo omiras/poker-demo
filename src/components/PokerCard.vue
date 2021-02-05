@@ -9,6 +9,7 @@
 
 <script>
 export default {
+      emits: ['turnedCard'],
       props: {
         cardImage: {
             type: String,
@@ -27,8 +28,7 @@ export default {
     methods: {
         turnCard() {
             this.faceDown = !this.faceDown;
-            console.log('The card shown is: ', this.cardName);
-            this.$emit('turnedCard', !this.faceDown)
+            this.$emit('turnedCard', this.cardName)
         }
     },
 };
